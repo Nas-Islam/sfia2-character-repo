@@ -4,6 +4,7 @@ swarm-manager
 swarm-worker
 [nginx]
 nginx-vm
+test-nginx
 
 [managers:vars]
 ansible_user=jenkins
