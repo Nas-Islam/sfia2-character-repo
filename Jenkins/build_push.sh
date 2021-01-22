@@ -10,5 +10,6 @@ sudo usermod -aG docker $(whoami)
 sudo usermod -aG docker jenkins
 newgrp docker
 
-docker-compose build --parallel
+docker-compose build --parallel --build-arg APP_VERSION=${app_version}
 docker-compose push
+docker system prune -af
