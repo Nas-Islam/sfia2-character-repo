@@ -17,12 +17,7 @@ pipeline{
         }
         stage("Config Management (ansible)"){
             steps{
-                // write out playbook, inventory
-                // with roles
-                // ssh keys generated from jenkins machine for jenkins user (ssh-keygen)
-                // sudo su - jenkins, install ansible on this machine for jenkins
                 sh "bash Jenkins/config_ansible.sh"
-                //sh "cd ansible && /home/jenkins/.local/bin/ansible-playbook -i inventory playbook.yaml"
             }
         }
         stage("Deploy"){
