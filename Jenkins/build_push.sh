@@ -11,4 +11,4 @@ sudo su jenkins
 
 docker login
 docker-compose up -d
-docker-compose-push
+docker-compose push
