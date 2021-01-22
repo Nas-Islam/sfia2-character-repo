@@ -1,7 +1,7 @@
 [managers]
-docker-manager
+swarm-manager
 [workers]
-docker-worker1
+swarm-worker
 
 [managers:vars]
 ansible_user=jenkins
