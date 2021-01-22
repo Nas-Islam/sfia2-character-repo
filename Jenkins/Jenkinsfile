@@ -13,6 +13,7 @@ pipeline{
                 script{
                     if (env.rollback == 'false') {
                         sh "bash Jenkins/test_script.sh"
+                    }
                 }
             }
         }
@@ -21,6 +22,7 @@ pipeline{
                 script{
                     if (env.rollback == 'false') {
                         sh "bash Jenkins/build_push.sh"
+                    }
                 }
             }
         }
