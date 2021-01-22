@@ -7,17 +7,11 @@ pipeline{
     stages{
         stage("Testing"){
             steps{
-                // write tests for each service
                 sh "bash Jenkins/test_script.sh"
-                // pytest on each service
             }
         }
         stage("Build & Push"){
             steps{
-                // install docker and docker-compose
-                // add jenkins to docker group
-                // sudo su - jenkins, docker login
-                // docker-compose build and push
                 sh "bash Jenkins/build_push.sh"
             }
         }
