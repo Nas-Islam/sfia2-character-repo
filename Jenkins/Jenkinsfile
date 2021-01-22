@@ -18,7 +18,7 @@ pipeline{
                 // add jenkins to docker group
                 // sudo su - jenkins, docker login
                 // docker-compose build and push
-                sh "bash build_push.sh"
+                sh "bash Jenkins/build_push.sh"
             }
         }
         // stage("Config Management (ansible)"){
