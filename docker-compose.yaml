@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  character-frontend:
+    container_name: character-frontend
+    build: ./service_1
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+  service2-backend:
+    container_name: service2-backend
+    build: ./service_2
+  service3-backend:
+    container_name: service3-backend
+    build: ./service_3
+  service4-backend:
+    container_name: service4-backend
+    build: ./service_4
