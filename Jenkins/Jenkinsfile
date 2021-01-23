@@ -2,10 +2,10 @@ pipeline{
     agent any
     environment{
         DATABASE_URI = credentials("DATABASE_URI")
-        AUTHOR = credentials("AUTHOR")
-        app_version = 'v2'
+        REPO_IP = credentials("REPO_IP")
+        app_version = 'v1'
         rollback = 'false'
-        replicas = 10
+        replicas = 5
     }
     stages{
         stage("Testing"){

@@ -2,7 +2,7 @@ version: '3.8'
 services:
   character-frontend:
     container_name: character-frontend
-    image: 34.105.184.82:8082/service1-frontend:v1
+    image: ${REPO_IP}/service1-frontend:${app_version}
     build: ./service_1
     deploy:
       replicas: 5
@@ -14,7 +14,7 @@ services:
       DATABASE_URI: ${DATABASE_URI}
   service2-backend:
     container_name: service2-backend
-    image: ${AUTHOR}/service2-backend:latest
+    image: ${REPO_IP}/service2-backend:${app_version}
     build: ./service_2
     deploy:
       replicas: 5
@@ -23,7 +23,7 @@ services:
       target: 5001
   service3-backend:
     container_name: service3-backend
-    image: ${AUTHOR}/service3-backend:latest
+    image: ${REPO_IP}/service3-backend:${app_version}
     build: ./service_3
     deploy:
       replicas: 5
@@ -32,7 +32,7 @@ services:
       target: 5002
   service4-backend:
     container_name: service4-backend
-    image: ${AUTHOR}/service4-backend:latest
+    image: ${REPO_IP}/service4-backend:${app_version}
     build: ./service_4
     deploy:
       replicas: 5
