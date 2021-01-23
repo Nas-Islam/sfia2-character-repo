@@ -2,7 +2,7 @@ version: '3.8'
 services:
   character-frontend:
     container_name: character-frontend
-    image: 34.105.184.82:8082/service1-frontend:latest
+    image: 34.105.184.82:8082/service1-frontend:v1
     build: ./service_1
     deploy:
       replicas: 5
