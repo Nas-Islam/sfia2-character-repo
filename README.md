@@ -19,8 +19,8 @@
 * [Front-End Design](#front-end-design)
 * [Known Issues](#known-issues)
 * [Future Improvements](#future-improvements)
-* [Authors](#authors)
 * [Aknowledgements](#aknowledgements)
+* [Authors](#authors)
 
 ## Brief
 
@@ -202,8 +202,32 @@ After the first creation of the application, I decided to refactor my code. Init
 The deploy section of the pipeline initialised the docker compose onto the swarm. This utilised the ```docker stack deploy``` function allowing the developer to make a rolling update across multiple services. Docker Stack is used to make several containers that are all based on the same image to provide high availability. The rolling update is beneficial as it means the users will experience hardly any downtime while the application is being updated, so both the old and the new version will be accessible until the new version has been fully rolled out across the whole docker swarm.
 
 ## Risk Assessment
+The Risk Assessment for this project is displayed below. The view this in full click this link: https://docs.google.com/spreadsheets/d/1K0oOe0WRTf1r99D3WdDTF6l_0dBxpTVbylfzUqmbzY0/edit?usp=sharing
+>![rsa1][rsa1]
+>![rsa2][rsa2]
+> *Figure 13: Risk Assessment for Character Generator Project*
 
+## Front-End Design
+The Front-End design displays what the user will see upon visiting the site. This is built with very simple HTML but is functional and works within reason.
+>![cgp][design]
+>
+> *Figure 14: The Front-End Design of the Project*
 
+## Known Issues
+There are currently no known issues in the system.
+
+## Future Improvements
+There are a number of improvements I would like to add to this application if there was more time:
+* Add a 'Stats' table which links to the 'Characters' table and shows all the stats of the randomly generated character.
+* Add images for the seperately generated characters.
+* Add a potential scoreboard which shows who has had the best randomly generated characters in terms of stats.
+
+## Aknowledgements
+
+* Harry Volker - Been a massive help with this project by putting out very good tutorial videos as a guide
+
+## Author
+Naserul Islam
 
 [ed]: https://i.imgur.com/VJ7yjuv.png
 [ci-pip]: https://i.imgur.com/QymS1EC.png
@@ -217,3 +241,6 @@ The deploy section of the pipeline initialised the docker compose onto the swarm
 [s3test]: https://i.imgur.com/OS43jGl.png
 [s4test]: https://i.imgur.com/RbkA64U.png
 [bsv]: https://i.imgur.com/toqcMPp.png
+[rsa1]: https://i.imgur.com/4nb0NnK.png
+[rsa2]: https://i.imgur.com/AB4x7gz.png
+[design]: https://i.imgur.com/tQzlpkj.png
