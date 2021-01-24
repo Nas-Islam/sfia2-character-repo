@@ -16,3 +16,9 @@
 * [Known Issues](#known-issues)
 * [Future Improvements](#future-improvements)
 * [Authors](#authors)
+* [Aknowledgements](#aknowledgements)
+
+## Brief
+
+The main objective of this project is to make a web-based application that utilises create and read functions and does this through linking to three different APIs and uses those APIs to create a final product. This was all done through tools and methodologies we have learned in the previous weeks. 
+ 
