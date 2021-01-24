@@ -6,8 +6,8 @@ import random
 def get_bonus():
     collection = request.get_json()
     #'bonus' Section
-    item_bonus = {'Wand':'+120 Magic', 'Sword':'+120 Attack', 'Axe':'+120 Woodcutting', 'Bow':'+120 Range', 'Sponge':'+120 Cleanliness', 'Mirror':'Reflective Armour'}
-    type_bonus = {'Warrior':'+100 Attack', 'Wizard':'+100 Magic', 'Witch':'+100 Alchemy', 'Knight':'+150 Attack', 'Royal Knight':'+250 Attack', 'Warlock':'+300 Magic', 'Maid':'+100 Cleaning', 'Doctor':'+150 Healing'}
+    item_bonus = {'Wand':'+120 Magic', 'Sword':'+120 Attack', 'Axe':'+120 Woodcutting', 'Bow':'+120 Range', 'Sponge':'+120 Cleanliness', 'Mirror':'Reflective Armour','PokeBall':'Power to capture anything', 'Assassins Blade':'+100 Stealth', 'AK47':'+500 Range', 'Super Saiyan Powers':'Unbeatable'}
+    type_bonus = {'Warrior':'+100 Attack', 'Wizard':'+100 Magic', 'Witch':'+100 Alchemy', 'Knight':'+150 Attack', 'Royal Knight':'+250 Attack', 'Warlock':'+300 Magic', 'Maid':'+100 Cleaning', 'Doctor':'+150 Healing', 'Pokemon Master':'+ Pokedex', 'Soldier':'+1000 Mental Strength', 'Saiyan':'Zenkai Boost'}
     
     new_item = collection["item_response"]
     new_type = collection["class_response"]
@@ -21,6 +21,7 @@ def get_bonus():
     axe_bonus = {'Warrior':'+40 Attack', 'Wizard':'+10 Attack', 'Witch':'+10 Attack', 'Knight':'+50 Attack', 'Royal Knight':'+60 Attack', 'Warlock':'+10 Magic', 'Maid':'+100 Attack', 'Doctor':'+30 Attack'}
     bow_bonus = {'Warrior':'+30 Ranged', 'Wizard':'+10 Ranged', 'Witch':'+10 Ranged', 'Knight':'+50 Ranged', 'Royal Knight':'+60 Ranged', 'Warlock':'+10 Ranged', 'Maid':'+100 Ranged', 'Doctor':'+30 Ranged'}
     sponge_bonus = {'Warrior':'Shiny Armour', 'Wizard':'Shiny Wizard Hat', 'Witch':'Shiny Cauldron', 'Knight':'Shiny Armour', 'Royal Knight':'Extremely Shiny Armour', 'Warlock':'Cleaning Spell', 'Maid':'Invincibility', 'Doctor':'Disinfectant'}
+    pokeball_bonus = {'Pokemon Master':'The Greatest there ever was', 'Witch':'Contains a Purrloin'}
 
     if new_item == 'Wand':
         extra_bonus = wand_bonus[new_type]
@@ -32,6 +33,8 @@ def get_bonus():
         extra_bonus = bow_bonus[new_type]
     elif new_item == 'Sponge':
         extra_bonus = sponge_bonus[new_type]
+    elif new_item == 'PokeBall':
+        extra_bonus = pokeball_bonus[new_type]
     else:
         extra_bonus = 'No Extra Bonuses'
     

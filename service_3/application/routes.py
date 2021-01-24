@@ -4,5 +4,5 @@ import random
 
 @app.route('/class', methods=["GET"])
 def get_class():
-    classes = ['Warrior', 'Wizard', 'Witch', 'Knight', 'Royal Knight', 'Warlock', 'Maid', 'Doctor']
+    classes = ['Warrior', 'Wizard', 'Witch', 'Knight', 'Royal Knight', 'Warlock', 'Maid', 'Doctor', 'Pokemon Master', 'Soldier', 'Saiyan']
     return Response(str(random.choice(classes)), mimetype='text/plain')
