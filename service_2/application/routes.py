@@ -19,5 +19,5 @@ def get_name():
 
 @app.route('/item', methods=["GET"])
 def get_item():
-    bonus_item = ['Sword', 'Axe', 'Bow', 'Sponge', 'Mirror', 'Wand', 'PokeBall', 'Assassins Blade', 'AK47', 'Super Saiyan Powers']
+    bonus_item = ['Sword', 'Axe', 'Bow', 'Sponge', 'Mirror', 'Wand', 'PokeBall']
     return Response(str(random.choice(bonus_item)), mimetype='text/plain') 
