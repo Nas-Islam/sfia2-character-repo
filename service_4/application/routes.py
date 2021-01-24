@@ -21,7 +21,7 @@ def get_bonus():
     axe_bonus = {'Warrior':'+40 Attack', 'Wizard':'+10 Attack', 'Witch':'+10 Attack', 'Knight':'+50 Attack', 'Royal Knight':'+60 Attack', 'Warlock':'+10 Magic', 'Maid':'+100 Attack', 'Doctor':'+30 Attack'}
     bow_bonus = {'Warrior':'+30 Ranged', 'Wizard':'+10 Ranged', 'Witch':'+10 Ranged', 'Knight':'+50 Ranged', 'Royal Knight':'+60 Ranged', 'Warlock':'+10 Ranged', 'Maid':'+100 Ranged', 'Doctor':'+30 Ranged'}
     sponge_bonus = {'Warrior':'Shiny Armour', 'Wizard':'Shiny Wizard Hat', 'Witch':'Shiny Cauldron', 'Knight':'Shiny Armour', 'Royal Knight':'Extremely Shiny Armour', 'Warlock':'Cleaning Spell', 'Maid':'Invincibility', 'Doctor':'Disinfectant'}
-    pokeball_bonus = {'Pokemon Master':'The Greatest there ever was', 'Witch':'Contains a Purrloin'}
+    pokeball_bonus = {'Warrior':'Catch a Pokemon', 'Wizard':'Catch a Pokemon', 'Witch':'Catch a Pokemon', 'Knight':'Catch a Pokemon', 'Royal Knight':'Catch a Pokemon', 'Warlock':'Catch a Pokemon', 'Maid':'Catch a Pokemon', 'Doctor':'Catch a Pokemon', 'Pokemon Master':'The Greatest there ever was', 'Soldier':'Contains a Purrloin', 'Saiyan': 'Contains a Beerus'}
 
     if new_item == 'Wand':
         extra_bonus = wand_bonus[new_type]
