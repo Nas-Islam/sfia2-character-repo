@@ -2,8 +2,8 @@ pipeline{
     agent any
     environment{
         DATABASE_URI = credentials("DATABASE_URI")
-        //REPO_IP = credentials("REPO_IP")
-        AUTHOR = credentials("AUTHOR")
+        REPO_IP = credentials("REPO_IP")
+        //AUTHOR = credentials("AUTHOR")
         rollback = 'false'
         replicas = 5
     }
