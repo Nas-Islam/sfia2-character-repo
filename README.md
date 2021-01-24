@@ -1,1 +1,18 @@
-# sfia2-character-repo
+# Random Character Generator Project - SFIA2
+## Contents
+* [Brief](#brief)
+    * [Requirements](#requirements)
+    * [My Approach](#my-approach)
+* [Architecture](#architecture)
+    * [Entity Diagram (Database Model)](#entity-diagram)
+    * [CI Pipeline](#ci-pipeline)
+* [Project Tracking](#project-tracking)
+* [Usage of Version Control System](#version-control-system)
+* [Evolution of Design & Process](#evolution)
+* [Risk Assessment](#risk-assessment)
+* [Testing](#testing)
+    * [Unit Mock Test](#unit-test)
+* [Front-End Design](#front-end-design)
+* [Known Issues](#known-issues)
+* [Future Improvements](#future-improvements)
+* [Authors](#authors)
