@@ -11,5 +11,5 @@ sudo usermod -aG docker jenkins
 newgrp docker
 
 docker-compose build --parallel --build-arg APP_VERSION=${app_version}
-docker-compose push
+docker-compose push ${REPO_IP}
 docker system prune -af
