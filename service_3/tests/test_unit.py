@@ -12,6 +12,7 @@ class TestBase(TestCase):
 
 class TestResponse(TestBase):
 
+# Tests if all the classes can be reached
     def test_get_class(self):
         for _ in range(15):
             response = self.client.get(url_for('get_class'))

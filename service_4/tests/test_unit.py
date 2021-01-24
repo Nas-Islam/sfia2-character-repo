@@ -46,7 +46,6 @@ class TestResponse(TestBase):
         self.assertEqual(b'+150 Healing, +120 Magic, +30 Magic', response.data) 
     
     # Testing all the 'Sword' item bonuses with every class
-    # final_bonus = chosen_type, chosen_item ,extra_bonus
     def test_get_sword_warrior_bonus(self):
         response = self.client.post(url_for('get_bonus'), json={"item_response":"Sword", "class_response":"Warrior"})
         self.assertEqual(b'+100 Attack, +120 Attack, +100 Attack', response.data)

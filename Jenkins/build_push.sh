@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Install Docker/Docker-COmpsoe and Add Jenkins to group
+# Install Docker/Docker-Compose and Add Jenkins to group
 sudo apt install -y curl jq
 curl https://get.docker.com | sudo bash
 version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
