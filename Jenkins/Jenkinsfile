@@ -3,7 +3,6 @@ pipeline{
     environment{
         DATABASE_URI = credentials("DATABASE_URI")
         REPO_IP = credentials("REPO_IP")
-        app_version = 'v1'
         rollback = 'false'
         replicas = 5
     }
