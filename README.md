@@ -19,8 +19,8 @@
 * [Front-End Design](#front-end-design)
 * [Known Issues](#known-issues)
 * [Future Improvements](#future-improvements)
-* [Aknowledgements](#aknowledgements)
 * [Authors](#authors)
+* [Aknowledgements](#aknowledgements)
 
 ## Brief
 
@@ -222,12 +222,12 @@ There are a number of improvements I would like to add to this application if th
 * Add images for the seperately generated characters.
 * Add a potential scoreboard which shows who has had the best randomly generated characters in terms of stats.
 
-## Aknowledgements
-
-* Harry Volker - Been a massive help with this project by putting out very good tutorial videos as a guide
-
 ## Author
 Naserul Islam
+
+## Aknowledgements
+
+* Harry Volker
 
 [ed]: https://i.imgur.com/VJ7yjuv.png
 [ci-pip]: https://i.imgur.com/QymS1EC.png
