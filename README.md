@@ -63,11 +63,17 @@ The Entity Diagram in Figure 1 shows the data that is going to be stored from th
 
 ### CI Pipeline
 
+Initial Pipeline
+>![initpip][in-pip]
+>
+> *Figure 2: Initial CI Pipeline Diagram*
+The initial pipeline shows NGINX was not initiated through Ansible and was created manually on a VM.
+
 >![cipipeline][ci-pip]
 >
-> *Figure 2: CI Pipeline Diagram*
+> *Figure 3: Updated CI Pipeline Diagram*
 
-Figure 2 shows the continuous integration pipeline that is connected with the associated tools and services used within the structure. This structure shows the continuous deployment and continuous delivery of the whole system. The general structure is that I would be able to change my source code by pushing it in to a version control system, such as GitHub. Once this occurs the webhook connected between the Jenkins server and the GitHub repository will trigger everything that is scripted inside of the Jenkinsfile. 
+Figure 3 shows the continuous integration pipeline that is connected with the associated tools and services used within the structure. This structure shows the continuous deployment and continuous delivery of the whole system. The general structure is that I would be able to change my source code by pushing it in to a version control system, such as GitHub. Once this occurs the webhook connected between the Jenkins server and the GitHub repository will trigger everything that is scripted inside of the Jenkinsfile. 
 
 The script starts off with a testing phase and this testing phase applies the plugins JUnit and Cobertura on the test unit code and produces test coverage reports. The next phase builds the images and pushes the new image to a DockerHub repository. Then the Ansible script file is ran and this initiates docker swarm onto the provided IP addresses. It also creates worker nodes which are then attached to the docker swarm. Ansible also installs NGINX on a virtual machine and links the NGINX to the swarm. 
 
@@ -79,7 +85,7 @@ In conclusion, the benefits of using this pipeline are that if there is an updat
 The project tracking of this project was done by using Asana. You can find the link to the board used here: https://app.asana.com/0/1199599860779001/board
 >![asana][asana]
 >
-> *Figure 3: Asana Board for Character Generator Project*
+> *Figure 4: Asana Board for Character Generator Project*
 
 The Asana board has been designed such that tasks are moved from left to right. The boards displayed are listed as follows: 
 * Product Backlog: These cards are a list of items that are needed to be completed for the project. 
@@ -94,15 +100,15 @@ The version control system used in this project is GitHub in this project I used
 
 >![vcs][vcs]
 >
-> *Figure 4: Git Log Graph*
+> *Figure 5: Git Log Graph*
 
-Figure 4 shows a section of commits made during the creation of the project and the branches used along with these commits. 
+Figure 5 shows a section of commits made during the creation of the project and the branches used along with these commits. 
 
 >![branchsection][branchsection]
 >
-> *Figure 5: GitHub Branches*
+> *Figure 6: GitHub Branches*
 
-Figure 5 shows the different branches and active branches in the Version Control System.
+Figure 6 shows the different branches and active branches in the Version Control System.
 
 The benefit of branches is that it allows you to see previous versions of your code just in case you would like to revert back and this is helpful as you may overwrite your previous code with an error or with a feature that is no longer wanted. 
 
@@ -115,7 +121,7 @@ In this application, Service 2 and 3 contain an array list of information each a
 
 >![bsv][bsv]
 >
-> *Figure 6: Pipeline Display showing all components of the Jenkinsfile*
+> *Figure 7: Pipeline Display showing all components of the Jenkinsfile*
 
 From left to right the stages are:
 * Declarative: Checkout SCM - Declares the Environment Variables
@@ -165,29 +171,29 @@ The unit mock test was done by using a Python library called ‘unittest.mock’
 The ‘pytest’ coverage mechanism shows us that all of the source code is being tested effectively. In Figure 7, you can see that the unit mock test for the source code has achieved 100% coverage. The picture below also shows a Cobertura graph of the coverage report and the common trend of the coverage for all of the lines of code tested beign 100%.
 >![coverage][cov]
 >
-> *Figure 7: Cobertura Graph*
+> *Figure 8: Cobertura Graph*
 
-Figure 8 shows the test coverage of the previous builds.
+Figure 9 shows the test coverage of the previous builds.
 >![testgraph][testgraph]
 >
-> *Figure 8: JUnit Graph*
+> *Figure 9: JUnit Graph*
 
-Figure 9, 10, 11 and 12 show the coverage of each service individually.
+Figure 10, 11, 12 and 13 show the coverage of each service individually.
 >![s1test][s1test]
 >
-> *Figure 9: Service 1 Coverage Report*
+> *Figure 10: Service 1 Coverage Report*
 
 >![s2test][s2test]
 >
-> *Figure 10: Service 2 Coverage Report*
+> *Figure 11: Service 2 Coverage Report*
 
 >![s3test][s3test]
 >
-> *Figure 11: Service 3 Coverage Report*
+> *Figure 12: Service 3 Coverage Report*
 
 >![s4test][s4test]
 >
-> *Figure 12: Service 4 Coverage Report*
+> *Figure 13: Service 4 Coverage Report*
 
 The tests for Services 1, 2, 3 and 4 were done thorougly and checks if all information displays from each array.
 
@@ -208,13 +214,13 @@ The deploy section of the pipeline initialised the docker compose onto the swarm
 The Risk Assessment for this project is displayed below. The view this in full click this link: https://docs.google.com/spreadsheets/d/1K0oOe0WRTf1r99D3WdDTF6l_0dBxpTVbylfzUqmbzY0/edit?usp=sharing
 >![rsa1][rsa1]
 >
-> *Figure 13: Risk Assessment for Character Generator Project*
+> *Figure 14: Risk Assessment for Character Generator Project*
 
 ## Front-End Design
 The Front-End design displays what the user will see upon visiting the site. This is built with very simple HTML but is functional and works within reason.
 >![cgp][design]
 >
-> *Figure 14: The Front-End Design of the Project*
+> *Figure 15: The Front-End Design of the Project*
 
 ## Known Issues
 * Random 'Max Retries' error which can be caused when the refresh button is clicked multiple times quickly.
@@ -246,3 +252,4 @@ Naserul Islam
 [bsv]: https://i.imgur.com/SmwkTo5.png
 [rsa1]: https://i.imgur.com/DU8URDY.png
 [design]: https://i.imgur.com/tQzlpkj.png
+[in-pip]: https://i.imgur.com/uMtDS3Q.png
