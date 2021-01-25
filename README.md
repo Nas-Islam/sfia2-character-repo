@@ -115,7 +115,7 @@ In this application, Service 2 and 3 contain an array list of information each a
 
 >![bsv][bsv]
 >
-> *Figure 6: Pipeline Dsplay*
+> *Figure 6: Pipeline Display showing all components of the Jenkinsfile*
 
 From left to right the stages are:
 * Declarative: Checkout SCM - Declares the Environment Variables
@@ -124,6 +124,7 @@ From left to right the stages are:
 * Config Management (Ansible)
 * Deploy - Uses Docker Stack
 * Declarative: Post Actions - Post Coverage Graphs
+
 ### Testing
 To do my tests I used the following test files:
 ```python
@@ -216,7 +217,7 @@ The Front-End design displays what the user will see upon visiting the site. Thi
 > *Figure 14: The Front-End Design of the Project*
 
 ## Known Issues
-There are currently no known issues in the system.
+* Random 'Max Retries' error which can be caused when the refresh button is clicked multiple times quickly.
 
 ## Future Improvements
 There are a number of improvements I would like to add to this application if there was more time:
