@@ -3,10 +3,10 @@
 * [Brief](#brief)
     * [Requirements](#requirements)
     * [My Approach](#my-approach)
+* [Project Tracking](#project-tracking)
 * [Architecture](#architecture)
     * [Entity Diagram](#entity-diagram)
     * [CI Pipeline](#ci-pipeline)
-* [Project Tracking](#project-tracking)
 * [Usage of Version Control System](#usage-of-version-control-system)
 * [Evolution of Design and Process](#evolution-of-design-and-process)
     * [Usage of APIs in Service 1, 2, 3 and 4](#usage-of-apis-in-service-1-2-3-and-4)
@@ -40,6 +40,7 @@ To achieve the objective of the project, I aim to include the following:
 * Ansible - To initiate a docker swarm
 * Deploy a rolling update with Docker Stack
 * Set up a reverse proxy to the application
+
 ### My Approach
 
 For this project I created an application where the user clicks a button that refreshes the page and generates a random character build for the user. This then creates a random character for the user to see and this satisfies the ‘create’ functionality criteria. The character has the following features: 
@@ -49,6 +50,20 @@ For this project I created an application where the user clicks a button that re
 * *Bonus Stats* 
 
  Also, the web page displays the five previous characters that were generated through an SQL table where the data is stored on an SQL VM instance. This feature satisfies the ‘read’ function of the criteria. 
+
+## Project Tracking
+The project tracking of this project was done by using Asana. You can find the link to the board used here: https://app.asana.com/0/1199599860779001/board
+>![asana][asana]
+>
+> *Figure 4: Asana Board for Character Generator Project*
+
+The Asana board has been designed such that tasks are moved from left to right. The boards displayed are listed as follows: 
+* Product Backlog: These cards are a list of items that are needed to be completed for the project. 
+* User Story: This card is the  user story that shows the functionality of the application. 
+* Planning: These cards are a list of features that could have been included into the project and are in the ‘planning’ phase. 
+* In progress: These cards are lists of items currently being worked on. 
+* Testing: These cards are a list of items that are being tested.
+* Finished: These cards are lists of processes that have been completed.
 
 ## Architecture
 
@@ -69,6 +84,7 @@ Initial Pipeline
 > *Figure 2: Initial CI Pipeline Diagram*
 The initial pipeline shows NGINX was not initiated through Ansible and was created manually on a VM.
 
+Updated Pipeline
 >![cipipeline][ci-pip]
 >
 > *Figure 3: Updated CI Pipeline Diagram*
@@ -80,20 +96,6 @@ The script starts off with a testing phase and this testing phase applies the pl
 Finally, the Jenkins pipeline initiates docker stack to deploy with docker compose, which takes the images from the DockerHub repository and installs the web application on the docker swarm. NGINX is the load balancer and users can connect to its IP address and view the application from there. 
 
 In conclusion, the benefits of using this pipeline are that if there is an update for the web application it will then immediately be rolled into from the GitHub Repository into the Docker Swarm via all of the tools explained previously. This allows a continuous delivery as well as a continuous deployment, so that users can use the web application while it is being updated. Also, the rolling update is a quick way to update the application. 
-
-## Project Tracking
-The project tracking of this project was done by using Asana. You can find the link to the board used here: https://app.asana.com/0/1199599860779001/board
->![asana][asana]
->
-> *Figure 4: Asana Board for Character Generator Project*
-
-The Asana board has been designed such that tasks are moved from left to right. The boards displayed are listed as follows: 
-* Product Backlog: These cards are a list of items that are needed to be completed for the project. 
-* User Story: This card is the  user story that shows the functionality of the application. 
-* Planning: These cards are a list of features that could have been included into the project and are in the ‘planning’ phase. 
-* In progress: These cards are lists of items currently being worked on. 
-* Testing: These cards are a list of items that are being tested.
-* Finished: These cards are lists of processes that have been completed.
 
 ## Usage of Version Control System
 The version control system used in this project is GitHub in this project I used a development branch where I would push any changes of my code into that branch. I also branched out and made several feature branches used for the different components of this project. This allowed me to compare previous code to newly updated code.  
