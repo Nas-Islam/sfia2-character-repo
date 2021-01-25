@@ -39,7 +39,7 @@ To achieve the objective of the project, I aim to include the following:
 * Jenkins Pipeline connected to Docker and Ansible to deploy web-application on an Nginx Load Balancer
 * Ansible - To initiate a docker swarm
 * Deploy a rolling update with Docker Stack
-
+* Set up a reverse proxy to the application
 ### My Approach
 
 For this project I created an application where the user clicks a button that refreshes the page and generates a random character build for the user. This then creates a random character for the user to see and this satisfies the ‘create’ functionality criteria. The character has the following features: 
