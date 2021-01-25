@@ -1,0 +1,36 @@
+<body style="background-color:yellowgreen;">
+<h1>Character Build Generator!</h1>
+
+<h2>Press the button to build your character!</h2>
+<button onClick="window.location.reload();">Rebuild Character</button>
+<p>
+    Character's Details:
+</p>
+<p>
+    Name: {{ cname }}
+</p>
+<p>
+    Class: {{ classes }}
+</p>
+<p>
+    Item: {{ citem }}
+</p>
+<p>
+    Bonus Stats: {{ bonuses }}
+</p>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Item</th>
+    <th>Class Type</th>
+    <th>Bonus Stats</th>
+  </tr>
+{% for chars in chars_list %}
+<tr>
+    <th>{{chars.name}}</th>
+    <th>{{chars.item}}</th>
+    <th>{{chars.class_type}}</th>
+    <th>{{chars.bonus}}</th>
+  </tr>
+{% endfor %}
+</body>

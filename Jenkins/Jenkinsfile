@@ -1,0 +1,45 @@
+pipeline{
+    agent any
+    environment{
+        DATABASE_URI = credentials("DATABASE_URI")
+        AUTHOR = credentials("AUTHOR")
+        rollback = 'false'
+        replicas = 5
+    }
+    stages{
+        stage("Testing"){
+            steps{
+                script{
+                    if (env.rollback == 'false') {
+                        sh "bash Jenkins/test_script.sh"
+                    }
+                }
+            }
+        }
+        stage("Build & Push"){
+            steps{
+                script{
+                    if (env.rollback == 'false') {
+                        sh "bash Jenkins/build_push.sh"
+                    }
+                }
+            }
+        }
+        stage("Config Management (ansible)"){
+            steps{
+                sh "bash Jenkins/config_ansible.sh"
+            }
+        }
+        stage("Deploy"){
+            steps{
+                sh "bash Jenkins/deploy_stack.sh" 
+            }
+        }
+    }
+    post{
+        always{
+            junit "**/junit.xml"
+            cobertura coberturaReportFile: '**/coverage.xml', failNoReports: false, failUnstable: false, onlyStable: false
+        }
+    }
+}

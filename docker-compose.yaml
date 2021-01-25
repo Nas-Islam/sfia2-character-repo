@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  character-frontend:
+    container_name: character-frontend
+    image: ${AUTHOR}/service1-frontend:latest
+    build: ./service_1
+    deploy:
+      replicas: 5
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+    environment:
+      DATABASE_URI: ${DATABASE_URI}
+  service2-backend:
+    container_name: service2-backend
+    image: ${AUTHOR}/service2-backend:latest
+    build: ./service_2
+    deploy:
+      replicas: 5
+    ports:
+    - published: 5001
+      target: 5001
+  service3-backend:
+    container_name: service3-backend
+    image: ${AUTHOR}/service3-backend:latest
+    build: ./service_3
+    deploy:
+      replicas: 5
+    ports:
+    - published: 5002
+      target: 5002
+  service4-backend:
+    container_name: service4-backend
+    image: ${AUTHOR}/service4-backend:latest
+    build: ./service_4
+    deploy:
+      replicas: 5
+    ports:
+    - published: 5003
+      target: 5003
