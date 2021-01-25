@@ -4,23 +4,23 @@
     * [Requirements](#requirements)
     * [My Approach](#my-approach)
 * [Architecture](#architecture)
-    * [Entity Diagram (Database Model)](#entity-diagram)
+    * [Entity Diagram](#entity-diagram)
     * [CI Pipeline](#ci-pipeline)
 * [Project Tracking](#project-tracking)
-* [Usage of Version Control System](#version-control-system)
-* [Evolution of Design & Process](#evolution)
-    * [Usage of APIs in Service 1, 2, 3 & 4](#api)
+* [Usage of Version Control System](#usage-of-version-control-system)
+* [Evolution of Design and Process](#evolution-of-design-and-process)
+    * [Usage of APIs in Service 1, 2, 3 and 4](#usage-of-apis-in-service-1-2-3-and-4)
     * [Testing](#testing)
-        * [Unit Mock Test](#unit-test)
-    * [Build & Push](#docker)
-    * [Config Management (Ansible)](#ansible)
-    * [Deploy](#stack)
+        * [Unit Mock Test](#unit-mock-test)
+    * [Build and Push](#build-and-push)
+    * [Ansible](#ansible)
+    * [Deploy](#deploy)
 * [Risk Assessment](#risk-assessment)
 * [Front-End Design](#front-end-design)
 * [Known Issues](#known-issues)
 * [Future Improvements](#future-improvements)
-* [Aknowledgements](#aknowledgements)
 * [Authors](#authors)
+* [Aknowledgements](#aknowledgements)
 
 ## Brief
 
@@ -39,7 +39,7 @@ To achieve the objective of the project, I aim to include the following:
 * Jenkins Pipeline connected to Docker and Ansible to deploy web-application on an Nginx Load Balancer
 * Ansible - To initiate a docker swarm
 * Deploy a rolling update with Docker Stack
-
+* Set up a reverse proxy to the application
 ### My Approach
 
 For this project I created an application where the user clicks a button that refreshes the page and generates a random character build for the user. This then creates a random character for the user to see and this satisfies the ‘create’ functionality criteria. The character has the following features: 
@@ -52,7 +52,7 @@ For this project I created an application where the user clicks a button that re
 
 ## Architecture
 
-### Entity Diagram (Database Model)
+### Entity Diagram
 Displayed below is the Entity Diagram showing the table used and implemented into the code.
 
 >![ED][ed]
@@ -106,7 +106,7 @@ Figure 5 shows the different branches and active branches in the Version Control
 
 The benefit of branches is that it allows you to see previous versions of your code just in case you would like to revert back and this is helpful as you may overwrite your previous code with an error or with a feature that is no longer wanted. 
 
-## Evolution of Design & Process
+## Evolution of Design and Process
 
 ### Usage of APIs in Service 1, 2, 3 & 4
 The services in the application send information to each other through the use of APIs. They send a ‘request’ signal when they require the information from the particular service which then sends back to the requester through a ‘response’. APIs are useful as they store information and can be accessed by multiple languages. The APIs used in this application are JSON APIs. 
@@ -190,10 +190,12 @@ Figure 9, 10, 11 and 12 show the coverage of each service individually.
 
 The tests for Services 1, 2, 3 and 4 were done thorougly and checks if all information displays from each array.
 
-### Build & Push
+### Build and Push
 The Build & Push section shown in Figure 6 is where the ```Dockerfile``` for each section were initialised using the ```docker-compose.yaml``` file. This file built each image and pushed them into my DockerHub repository. The images are then going to be used at a later stage of the process. This stage also installed Docker on the Jenkins system and allowed Jenkins to perform the required stages with Docker.
 
-### Config Management (Ansible)
+Docker is the containerisation tool and is useful as it can be used on any operating system. 
+
+### Ansible
 Ansible was used to initialise the docker swarm onto a few virtual machines. This was done by installing ansible onto the Jenkins server and initialising the different roles such as installing docker onto each virtual machine, initialising the docker swarm see create a swarm manager and finally to initialise the swarm worker node attached with a join token to swarm manager. 
 
 After the first creation of the application, I decided to refactor my code. Initially I had to create an NGINX instance manually, but then I added another role to my ansible configure file to install NGINX on a separate virtual machine each time a new build is created on Jenkins. This allowed me to automate the NGINX installation on other virtual machines, just in case the previous virtual machine containing NGINX is deleted or has an error. 
@@ -204,7 +206,7 @@ The deploy section of the pipeline initialised the docker compose onto the swarm
 ## Risk Assessment
 The Risk Assessment for this project is displayed below. The view this in full click this link: https://docs.google.com/spreadsheets/d/1K0oOe0WRTf1r99D3WdDTF6l_0dBxpTVbylfzUqmbzY0/edit?usp=sharing
 >![rsa1][rsa1]
->![rsa2][rsa2]
+>
 > *Figure 13: Risk Assessment for Character Generator Project*
 
 ## Front-End Design
@@ -222,12 +224,12 @@ There are a number of improvements I would like to add to this application if th
 * Add images for the seperately generated characters.
 * Add a potential scoreboard which shows who has had the best randomly generated characters in terms of stats.
 
-## Aknowledgements
-
-* Harry Volker - Been a massive help with this project by putting out very good tutorial videos as a guide
-
 ## Author
 Naserul Islam
+
+## Aknowledgements
+
+* Harry Volker
 
 [ed]: https://i.imgur.com/VJ7yjuv.png
 [ci-pip]: https://i.imgur.com/QymS1EC.png
@@ -241,6 +243,5 @@ Naserul Islam
 [s3test]: https://i.imgur.com/OS43jGl.png
 [s4test]: https://i.imgur.com/RbkA64U.png
 [bsv]: https://i.imgur.com/toqcMPp.png
-[rsa1]: https://i.imgur.com/4nb0NnK.png
-[rsa2]: https://i.imgur.com/AB4x7gz.png
+[rsa1]: https://i.imgur.com/DU8URDY.png
 [design]: https://i.imgur.com/tQzlpkj.png
